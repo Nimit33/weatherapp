@@ -1,0 +1,154 @@
+document.addEventListener('DOMContentLoaded', function() {
+        // Vehicle Comparison Tool
+        const vehicleComparisonSection=document.getElementById('vehicleComparison');
+
+        // Sample vehicle data for comparison (you can replace it with actual data)
+        const vehicles=[ {
+            name: 'Toyota Innova',
+            type: 'ICE gasoline',
+            price: 27934.91,
+            fuelEconomy: 10.00,
+            fuelPrice: 0.63,
+            fuelTaxes: 0.03,
+            maintenanceCost: 0.00851
+        }
+
+        ,
+        {
+        name: 'Mitsubishi Pajero',
+        type: 'ICE diesel',
+        price: 41902.37,
+        fuelEconomy: 11.20,
+        fuelPrice: 0.80,
+        fuelTaxes: 0.04,
+        maintenanceCost: 0.01355
+    }
+
+    ,
+    {
+    name: 'Toyota Corolla Cross',
+    type: 'HEV',
+    price: 34918.64,
+    fuelEconomy: 23.25,
+    fuelPrice: 0.86,
+    fuelTaxes: 0.04,
+    maintenanceCost: 0.00961
+}
+
+,
+{
+name: 'Mitsubishi Outlander Sport',
+type: 'PHEV',
+price: 62155.18,
+fuelEconomy: 56.00,
+fuelPrice: 0.86,
+fuelTaxes: 0.04,
+maintenanceCost: 0.00978
+}
+
+,
+{
+name: 'Hyundai Kona Electric',
+type: 'EV',
+price: 48886.10,
+fuelEconomy: 0, // Electric vehicles have no fuel economy
+fuelPrice: 0, // Electric vehicles have no fuel price
+fuelTaxes: 0, // Electric vehicles have no fuel taxes
+maintenanceCost: 0.00419
+}
+
+];
+
+// Function to display vehicle comparison
+function displayVehicleComparison() {
+    const comparisonTool=document.createElement('div');
+    comparisonTool.innerHTML=` <h3>Compare Vehicles</h3> <table> <tr> <th>Vehicle</th> <th>Price (USD)</th> <th>Fuel Economy (km/l)</th> <th>Fuel Price (USD/l)</th> <th>Fuel Taxes (USD/l)</th> <th>Maintenance Cost (USD/km)</th> </tr> </table> `;
+
+    const tableBody=comparisonTool.querySelector('table');
+
+    vehicles.forEach(vehicle=> {
+            const row=document.createElement('tr');
+
+            row.innerHTML=` <td>$ {
+                vehicle.name
+            }
+
+            </td> <td>$ {
+                vehicle.price
+            }
+
+            </td> <td>$ {
+                vehicle.fuelEconomy
+            }
+
+            </td> <td>$ {
+                vehicle.fuelPrice
+            }
+
+            </td> <td>$ {
+                vehicle.fuelTaxes
+            }
+
+            </td> <td>$ {
+                vehicle.maintenanceCost
+            }
+
+            </td> `;
+            tableBody.appendChild(row);
+        });
+
+    vehicleComparisonSection.appendChild(comparisonTool);
+}
+
+displayVehicleComparison();
+
+// Environmental Impact Calculation
+const environmentalImpactSection=document.getElementById('environmentalImpact');
+
+// Function to calculate CO2 emission for each vehicle type
+function calculateCO2Emission(vehicle) {
+    let co2Emission=0;
+
+    if (vehicle.type==='EV') {
+        // Electric vehicles have no CO2 emissions
+        co2Emission=0;
+    }
+
+    else {
+        // Calculate CO2 emission based on fuel consumption and emission factors
+        // This calculation can be customized based on specific emission factors
+        const fuelConsumption=10000 / vehicle.fuelEconomy; // Average annual usage divided by fuel economy
+        co2Emission=fuelConsumption * 2.31; // Assume a generic emission factor (gCO2/km) for gasoline and diesel
+    }
+
+    return co2Emission;
+}
+
+// Function to display environmental impact
+function displayEnvironmentalImpact() {
+    const impactContainer=document.createElement('div');
+    impactContainer.innerHTML=` <h3>Environmental Impact</h3> <table> <tr> <th>Vehicle</th> <th>CO2 Emission (g/km)</th> </tr> </table> `;
+
+    const tableBody=impactContainer.querySelector('table');
+
+    vehicles.forEach(vehicle=> {
+            const co2Emission=calculateCO2Emission(vehicle);
+            const row=document.createElement('tr');
+
+            row.innerHTML=` <td>$ {
+                vehicle.name
+            }
+
+            </td> <td>$ {
+                co2Emission
+            }
+
+            </td> `;
+            tableBody.appendChild(row);
+        });
+
+    environmentalImpactSection.appendChild(impactContainer);
+}
+
+displayEnvironmentalImpact();
+});

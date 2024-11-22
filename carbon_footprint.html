@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Choices</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        :root {
+            --overcolor2: rgb(9 35 23 / 29%);
+        }
+
+        .main-bg {
+            background: linear-gradient(var(--overcolor2),
+                    var(--overcolor2)), url('josefin-HtCgLIDy-2U-unsplash.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            padding: 7rem;
+            border-radius: 3rem;
+        }
+
+        .prediction-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Drive Green</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About this App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How to use?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-bg">
+        <h1 class="my-4 text-center">Transport Choices</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form id="carbonForm">
+                    <div class="mb-3">
+                        <label for="dailyTravel" class="form-label">How many times do you travel daily?</label>
+                        <input type="number" class="form-control" id="dailyTravel" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="distance" class="form-label">What is the distance you travel (in km)?</label>
+                        <input type="number" class="form-control" id="distance" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="transport" class="form-label">What means of transport do you use?</label>
+                        <select class="form-select" id="transport" required>
+                            <option value="car">Car</option>
+                            <option value="motorbike">Motorbike</option>
+                            <option value="bus">Bus</option>
+                            <option value="metro">Metro</option>
+                            <option value="shared_taxi">Shared Taxi</option> <!-- Updated option -->
+                            <option value="bicycle">Bicycle</option> <!-- Corrected capitalization -->
+                            <option value="walking">Walking</option> <!-- Corrected capitalization -->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Calculate Carbon Footprint</button>
+                </form>
+                <div id="result" class="mt-3"></div>
+                <div class="mt-5">
+                    <h3>Why Choose Carbon-Friendly Transport?</h3>
+                    <p>Choosing carbon-friendly transport options like walking, cycling, or using public transport can
+                        significantly reduce your carbon footprint and contribute to mitigating climate change. Here are
+                        some reasons to consider:</p>
+                    <ul>
+                        <li>Reduced greenhouse gas emissions: Cars and motorbikes emit carbon dioxide (CO2) and other
+                            pollutants that contribute to global warming. By choosing alternative modes of transport,
+                            you can reduce these emissions.</li>
+                        <li>Improved air quality: Public transport and non-motorized modes of transport produce fewer
+                            pollutants compared to cars and motorbikes, leading to cleaner air and better respiratory
+                            health.</li>
+                        <li>Reduced traffic congestion: Opting for public transport, cycling, or walking can help
+                            alleviate traffic congestion in urban areas, leading to smoother traffic flow and shorter
+                            travel times for everyone.</li>
+                        <li>Health benefits: Walking and cycling are excellent forms of exercise that can improve
+                            cardiovascular health, reduce stress, and boost overall well-being. By incorporating more
+                            physical activity into your daily routine, you can enjoy these health benefits while
+                            reducing your carbon footprint.</li>
+                    </ul>
+                </div>
+                <!-- <div class="prediction-card">
+                    <h3 class="text-center">Future Predictions</h3>
+                    <p>In the future, advancements in technology and infrastructure will make carbon-friendly transport
+                        options even more accessible and appealing. Here are some predictions:</p>
+                    <ul>
+                        <li>Expansion of bike lanes and pedestrian-friendly zones in cities to encourage walking and
+                            cycling.</li>
+                        <li>Increased availability of electric vehicles (EVs) and improved charging infrastructure,
+                            making EVs a mainstream choice for consumers.</li>
+                        <li>Integration of smart transportation systems to optimize traffic flow and reduce congestion,
+                            resulting in shorter travel times and lower emissions.</li>
+                        <li>Implementation of incentives and policies to promote carpooling, ride-sharing, and public
+                            transportation, incentivizing people to choose sustainable travel options.</li>
+                        <li>Emergence of innovative transportation solutions, such as autonomous vehicles and flying
+                            taxis, revolutionizing urban mobility and reducing environmental impact.</li>
+                    </ul>
+                    <p>By embracing these future trends and making conscious choices today, we can create a more
+                        sustainable and eco-friendly transportation system for generations to come.</p>
+                </div>
+            </div> -->
+                <div class="prediction-card bg-dark text-white p-4 rounded">
+                    <h3 class="mb-3">Future Predictions</h3>
+                    <p>In the future, sustainable transportation options will become increasingly important as we strive
+                        to
+                        reduce carbon emissions and combat climate change. By adopting eco-friendly means of transport
+                        today, we can contribute to a cleaner environment and a healthier planet for future generations.
+                    </p>
+                    <h5 class="mt-4">Common Questions:</h5>
+                    <ul>
+                        <li><strong>Q:</strong> What are some benefits of using public transportation?</li>
+                        <li><strong>A:</strong> Public transportation helps reduce traffic congestion, lowers air
+                            pollution,
+                            and decreases greenhouse gas emissions. It also promotes social equity and provides
+                            affordable
+                            mobility options for everyone.</li>
+                        <li><strong>Q:</strong> How can cycling contribute to reducing carbon emissions?</li>
+                        <li><strong>A:</strong> Cycling is a zero-emission mode of transport that helps reduce air
+                            pollution
+                            and greenhouse gas emissions. By choosing to cycle instead of driving, individuals can lower
+                            their carbon footprint and improve their overall health and well-being.</li>
+                        <li><strong>Q:</strong> Is carpooling an effective way to reduce carbon emissions?</li>
+                        <li><strong>A:</strong> Yes, carpooling allows multiple individuals to share a vehicle, thereby
+                            reducing the number of cars on the road and lowering carbon emissions. It is an efficient
+                            and
+                            cost-effective way to commute while minimizing environmental impact.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="carbon_footprint.js"></script>
+</body>
+
+</html>
